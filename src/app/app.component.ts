@@ -8,31 +8,41 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
  */
 interface FoodNode {
   name: string;
+  payoff: string,
+  contrat: string,
   children?: FoodNode[];
 }
 
 const TREE_DATA: FoodNode[] = [
   {
     name: 'Fruit',
+    payoff: '9',
+    contrat: 'contrat1',
     children: [
-      { name: 'Apple' },
-      { name: 'Banana' },
-      { name: 'Fruit loops' },
+      { name: 'Apple', payoff: '9', contrat: 'contrat2', },
+      { name: 'Banana', payoff: '8', contrat: 'contrat5', },
+      { name: 'Fruit loops', payoff: '4', contrat: 'contrat1', },
     ]
   }, {
     name: 'Vegetables',
+    payoff: '6',
+    contrat: 'contrat19',
     children: [
       {
         name: 'Green',
+        payoff: '9',
+        contrat: 'contrat1',
         children: [
-          { name: 'Broccoli' },
-          { name: 'Brussel sprouts' },
+          { name: 'Broccoli', payoff: '2', contrat: 'contrat10', },
+          { name: 'Brussel sprouts', payoff: '3', contrat: 'contrat12', },
         ]
       }, {
         name: 'Orange',
+        payoff: '9',
+        contrat: 'contrat1',
         children: [
-          { name: 'Pumpkins' },
-          { name: 'Carrots' },
+          { name: 'Pumpkins', payoff: '5', contrat: 'contrat7', },
+          { name: 'Carrots', payoff: '8', contrat: 'contrat5', },
         ]
       },
     ]
