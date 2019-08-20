@@ -6,10 +6,15 @@ import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatCar
 import { MatTreeModule } from '@angular/material/tree';
 import { FormsModule } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { TreeTooltipDirectiveDirective } from './tooltip/tree-tooltip-directive.directive';
+import { AwesomeTooltipComponent } from './tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TreeTooltipDirectiveDirective,
+    AwesomeTooltipComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,8 +27,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatCardModule,
     MatTreeModule,
     MatTooltipModule,
+    OverlayModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AwesomeTooltipComponent],
 })
 export class AppModule { }
