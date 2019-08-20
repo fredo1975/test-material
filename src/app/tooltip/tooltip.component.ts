@@ -19,5 +19,5 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class AwesomeTooltipComponent {
 
-  @Input() text = 'azaz';
+  @Input() text = '';
 }

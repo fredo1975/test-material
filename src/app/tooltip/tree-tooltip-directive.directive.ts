@@ -7,7 +7,7 @@ import { AwesomeTooltipComponent } from './tooltip.component';
   selector: '[appTreeTooltipDirective]'
 })
 export class TreeTooltipDirectiveDirective implements OnInit{
-  @Input('awesomeTooltip') text = '';
+  @Input('appTreeTooltipDirective') text = '';
   private overlayRef: OverlayRef;
   constructor(private overlayPositionBuilder: OverlayPositionBuilder,
     private elementRef: ElementRef, 
@@ -29,7 +29,7 @@ export class TreeTooltipDirectiveDirective implements OnInit{
 
   @HostListener('mouseenter')
   show() { 
-    console.log('show !!!');
+    // console.log('show !!!'+this.text);
     // Create tooltip portal
     const tooltipPortal = new ComponentPortal(AwesomeTooltipComponent);
 
@@ -42,7 +42,7 @@ export class TreeTooltipDirectiveDirective implements OnInit{
 
   @HostListener('mouseout')
   hide() { 
-    console.log('hide !!!');
+    // console.log('hide !!!');
     this.overlayRef.detach();
   }
 

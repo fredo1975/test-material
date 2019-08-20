@@ -8,7 +8,7 @@
       <li class="mat-tree-node">
         <!-- use a disabled button to provide padding for tree leaf -->
         <button mat-icon-button disabled matTooltip="payoff : {{node.payoff}} - contrat : {{node.contrat}}"></button>
-        {{node.name}}
+        <button class="new-button" appTreeTooltipDirective="payoff : {{node.payoff}} - contrat : {{node.contrat}}">{{node.name}}</button>
       </li>
     </mat-tree-node>
     <!-- This is the tree node template for expandable nodes -->
