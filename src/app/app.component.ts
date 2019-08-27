@@ -1,15 +1,15 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 /**
  * Food data with nested structure.
  * Each node has a name and an optiona list of children.
  */
 interface FoodNode {
   name: string;
-  payoff: string,
-  contrat: string,
+  payoff: string;
+  contrat: string;
   children?: FoodNode[];
 }
 
@@ -56,12 +56,12 @@ const TREE_DATA: FoodNode[] = [
 })
 
 export class AppComponent {
-  title = "fredo";
-  selectedValue: string = "";
+  title = 'fredo';
+  selectedValue = '';
   items = [
-    { value: "0", view: "zero" },
-    { value: "1", view: "one" },
-    { value: "2", view: "Two" }
+    { value: '0', view: 'zero' },
+    { value: '1', view: 'one' },
+    { value: '2', view: 'Two' }
   ];
 
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
