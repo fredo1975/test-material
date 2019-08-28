@@ -2,9 +2,18 @@
     display: block
   }
   
-  div {
+div {
     background-color: #292929;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+  }
+
+table {
+    background-color: rgb(236, 225, 225);
+    font-size: 1px;
+    border: 1px solid white;
+  }
+  .mytable tr {
+    text-align: right;
   }

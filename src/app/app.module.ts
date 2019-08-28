@@ -9,12 +9,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { TreeTooltipDirectiveDirective } from './tooltip/tree-tooltip-directive.directive';
 import { AwesomeTooltipComponent } from './tooltip/tooltip.component';
+import { SanitizePipePipe } from './sanitize-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TreeTooltipDirectiveDirective,
     AwesomeTooltipComponent,
+    SanitizePipePipe,
   ],
   imports: [
     BrowserModule,

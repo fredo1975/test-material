@@ -1,4 +1,4 @@
-import { Directive, HostListener, Input, OnInit, ComponentRef, ElementRef } from '@angular/core';
+import { Directive, HostListener, HostBinding, Input, OnInit, ComponentRef, ElementRef } from '@angular/core';
 import { OverlayRef, Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { AwesomeTooltipComponent } from './tooltip.component';
@@ -36,7 +36,7 @@ export class TreeTooltipDirectiveDirective implements OnInit {
     // Attach tooltip portal to overlay
     const tooltipRef: ComponentRef<AwesomeTooltipComponent> = this.overlayRef.attach(tooltipPortal);
     // Pass content to tooltip component instance
-    tooltipRef.instance.text = this.formatToolTip(this.node);
+    tooltipRef.instance.text = this.formatToolTip();
   }
 
   @HostListener('mouseout')
@@ -45,12 +45,20 @@ export class TreeTooltipDirectiveDirective implements OnInit {
     this.overlayRef.detach();
   }
 
-  formatToolTip(node: FoodNode) {
-    let toolTip = 'name : ' + this.node.name + '<br/>' + 'payoff : ' + this.node.payoff + '<br/>' +
-      'contrat : ' + this.node.contrat + '<br/>';
-    node.position.forEach((key) => {
-      toolTip = toolTip + 'book : ' + key['book'] + ' - position : ' + key['val'] + '<br/>';
+  formatToolTip() {
+    let toolTip = '<table style=\'font-size: 15px;border: 1px solid white;\'>';
+    toolTip = toolTip + '<th align=\'center\'>' + 'name ' + '</th>'
+      + '<th align=\'center\'>' + 'payoff ' + '</th>' + '<th align=\'center\'>' + 'contrat ' + '</th>';
+    toolTip = toolTip + '<tr><td align=\'center\'>' + this.node.name + '</td>';
+    toolTip = toolTip + '<td align=\'center\'>' + this.node.payoff + '</td>';
+    toolTip = toolTip + '<td align=\'center\'>' + this.node.contrat + '</td></tr>';
+    toolTip = toolTip + '</table>';
+    toolTip = toolTip + '<table style=\'font-size: 15px;border: 1px solid white;\'>';
+    toolTip = toolTip + '<tr><th>book</th><th>position</th></tr>';
+    this.node.position.forEach((key) => {
+      toolTip = toolTip + '<tr><td align=\'center\'>' + key['book'] + '</td><td align=\'center\'>' + key['val'] + '</td></tr>';
     });
+    toolTip = toolTip + '</table>';
     return toolTip;
   }
 }
