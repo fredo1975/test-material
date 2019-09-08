@@ -4,6 +4,9 @@
   display: none;
 }
 
+.example-tree {
+
+}
 .example-tree ul,
 .example-tree li {
   margin-top: 0;
@@ -11,18 +14,87 @@
   list-style-type: none;
 }
 
+.mat-tree {
+  font-size: 15px;
+}
+
+.mat-tree-node {
+  font-size: 15px;
+  min-height: 18px;
+  display: flow-root;
+}
 :host {
   display: block;
   padding-top: 5rem;
 }
 
+.mat-icon-button {
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
 .new-button {
   background-color: #ea4c89;
   border: none;
   border-radius: 4px;
   color: white;
-  font-size: 1rem;
+  font-size: 15px;
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+
+.card {
+  height: 100%;
+  margin-top: 5px;
+  margin: 10px;
+  font-size: 15px;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.details-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 10px;
+}
+
+.position-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 10px;
+  justify-content: center;
+}
+
+.details-box-label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.details-box-value {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 5px;
+  padding-left: 15px;
+}
+
+table {
+  margin: 15px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td {
+  height: 10px;
+  vertical-align: middle;
+  padding: 5px;
+  padding-left: 15px;
 }

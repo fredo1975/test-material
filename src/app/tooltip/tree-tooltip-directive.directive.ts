@@ -22,6 +22,11 @@ export class TreeTooltipDirectiveDirective implements OnInit {
         originY: 'top',
         overlayX: 'center',
         overlayY: 'bottom',
+      }, {
+        originX: 'center',
+        originY: 'bottom',
+        overlayX: 'center',
+        overlayY: 'top',
       }]);
     // Connect position strategy
     this.overlayRef = this.overlay.create({ positionStrategy });
